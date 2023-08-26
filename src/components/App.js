@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, useRoutes } from "react-router-dom";
+import BreadCrumbs from "./BreadCrumbs";
 import Loading from "./Loading";
 import Navbar from "./Navbar";
 const Home = lazy(() => import("./Home"));
@@ -70,6 +71,7 @@ export default function App() {
   return (
     <Router>
       <Navbar />
+      <BreadCrumbs />
       <Suspense fallback={<Loading />}>
         <Routes />
       </Suspense>
